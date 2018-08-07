@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./index.js"></script>
+    <title>
+        模板
+    </title>
+</head>
+
+<body>
+    <div>
+        <div>123</div>
+        <p>
+            p{{ text["a"] }}
+        </p>
+        <div>
+            123 {% if(test > 1){ %} {{ test }} {% } else { %} {{ test1 | addName | addx }}
+            <ul>
+                {% for(let i = 0; i > 3; i++){ %} {% for(let j = 0; j > 2; j++){ %}
+                <li>{{ list[i][j] === 1 ? '123' : '321' }}</li>
+                {% } %} {% } %}
+            </ul>
+            {% } %}
+        </div>
+    </div>
+
+    <script>
+        console.time("test");
+
+        tpl({
+            text: { a: "文本23" },
+            test: 0,
+            test1: "凡",
+            list: [
+                [1, 2],
+                [3, 4],
+                [5, 1]
+            ],
+            addName(name) {
+                return "si" + name;
+            },
+            addx(name) {
+                return "luo" + name;
+            }
+        });
+
+        console.timeEnd("test");
+    </script>
+</body>
+
+</html>

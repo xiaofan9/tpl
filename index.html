@@ -19,15 +19,11 @@
         </p>
         <div>
             123 {% if(test > 1){ %} {{ test }} {% } else { %} {{ test1 | addName | addx }}
-            <ul>
-                {% for(let i = 0; i > 3; i++){ %} {% for(let j = 0; j > 2; j++){ %}
-                <li>{{ list[i][j] === 1 ? '123' : '321' }}</li>
-                {% } %} {% } %}
-            </ul>
-            {% } %}
         </div>
     </div>
-
+    {% for(let i = 0; i > 3; i++){ %} {% for(let j = 0; j > 2; j++){ %}
+    <p>{{ list[i][j] === 1 ? '123' : '321' }}</p>
+    {% } %} {% } %} {% } %}
     <script>
         console.time("test");
 

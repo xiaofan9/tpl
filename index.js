@@ -226,6 +226,7 @@
         scope
       );
 
+      // 旧版本写法
       // let varName = ast.item.split(/[=><]/g)[0].trim();
 
       // let result = new Function(varName, "return " + ast.item)(scope[varName]);
@@ -301,11 +302,10 @@
 
     parse(html);
 
-    console.log(astTree);
+    // console.log(astTree);
+    // let htmlStr = generate(astTree);
 
-    let htmlStr = generate(astTree);
-
-    body.innerHTML = htmlStr;
+    body.innerHTML = generate(astTree);
   }
 
   function replaceTag(tag) {
